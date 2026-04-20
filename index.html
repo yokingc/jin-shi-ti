@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>晋试题</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="header">
+  <h1>前端面试复习</h1>
+  <p id="headerSubtitle">加载中...</p>
+  <div class="stats">
+    <div class="stat"><strong id="statModules">-</strong>大模块</div>
+    <div class="stat"><strong id="statCards">-</strong>题总计</div>
+  </div>
+</div>
+
+<div class="sticky-shell">
+  <div class="progress-wrap">
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+    </div>
+    <div class="progress-text" id="progressText">已展开 0 / 0 题</div>
+  </div>
+  <div class="tab-bar" id="tabBar"></div>
+</div>
+
+<div id="main"></div>
+
+<div style="height:20px"></div>
+
+<div class="fab-wrap">
+  <div class="fab-menu" id="fabMenu"></div>
+  <button class="fab-btn" id="fabBtn" onclick="toggleMenu()">☰</button>
+</div>
+
+<script src="data/模块化.js"></script>
+<script src="data/JS基础内核.js"></script>
+<script src="data/网络基础.js"></script>
+<script src="data/认证安全.js"></script>
+<script src="data/工程化.js"></script>
+<script src="data/React.js"></script>
+<script src="data/性能优化.js"></script>
+<script src="data/手写题.js"></script>
+<script src="data/TypeScript.js"></script>
+<script src="data/SSR.js"></script>
+<script src="data/微前端.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
