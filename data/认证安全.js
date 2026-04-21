@@ -31,10 +31,11 @@
         { text: 'HttpOnly', color: 'kw' },
         { text: 'SameSite', color: 'kw' }
       ],
-      opening: `XSS（跨站脚本）：攻击者向页面注入恶意脚本，在用户浏览器中执行，可窃取 Cookie/token、操作 DOM、发起请求。防御：输入转义、CSP、HttpOnly Cookie。CSRF（跨站请求伪造）：攻击者诱导用户访问恶意页面，借助浏览器自动携带 Cookie 向目标站点发起请求，执行转账等副作用操作（通常读不到响应）。防御：SameSite Cookie、CSRF Token、验证 Origin/Referer。`,
+      opening: `XSS（跨站脚本）：攻击者向页面注入恶意脚本，在用户浏览器中执行，可窃取 Cookie/token、操作 DOM、发起请求。防御：输入转义、CSP-内容安全策略、HttpOnly Cookie。CSRF（跨站请求伪造）：攻击者诱导用户访问恶意页面，借助浏览器自动携带 Cookie 向目标站点发起请求，执行转账等副作用操作（通常读不到响应）。防御：SameSite Cookie、CSRF Token、验证 Origin/Referer。`,
       followupLabel: '追问点',
       followup: [
-        { text: 'XSS 分哪几类？（存储型：注入持久化到数据库；反射型：注入在 URL 参数中；DOM 型：前端 JS 直接操作 DOM 时注入）' },
+        { text: 'XSS和CSRF通俗翻译？（XSS：恶意脚本进了你的网站页面内部执行；CSRF：是恶意站点借你的浏览器和 Cookie，冒充你向别的网站发请求。）' },
+        { text: 'XSS 分哪几类？（存储型：注入持久化到数据库；反射型：注入在 URL 参数中，服务端回显；DOM 型：前端 JS 直接操作 DOM 时注入）' },
         { text: 'HttpOnly 能防 XSS 吗？（能防止 JS 读取 Cookie，但不能防止 XSS 本身发生）' },
         { text: 'CSRF 为什么通常只能做副作用操作而不能读数据？（同源策略限制 JS 读取跨域响应）' },
         { text: 'SameSite=Lax 能完全防 CSRF 吗？（能防大多数场景，但顶层 GET 导航仍会带 Cookie，需配合 CSRF Token）' },

@@ -34,6 +34,8 @@
       followupLabel: '追问点',
       followup: [
         { text: 'HTTP/2 解决了什么问题？（应用层队头阻塞；但 TCP 层丢包仍会阻塞，这是 HTTP/3 的动机）' },
+        { text: 'HTTP/3 为什么特殊？（HTTP/3 不走 TCP，而是走 QUIC over UDP，优化了“传输层连接 + 安全握手”，减少队头阻塞）' },
+        { text: 'TCP 和 TLS 的作用？（TCP三次握手建立连接；TLS就是HTTP的安全方案，校验身份、协商加密算法和密钥，一般身份+密钥非对称，后续业务数据对称）' },
         { text: 'CSS 为什么会阻塞渲染？（需要 CSSOM 才能生成 Render Tree，无法确定元素最终样式）' },
         { text: 'JS 为什么会阻塞 HTML 解析？（JS 可能 document.write 或修改 DOM，浏览器必须保证 DOM 构建确定性）' },
         { text: 'defer 和 async 的区别？（async 下载完立即执行会阻塞解析；defer 等 HTML 解析完按顺序执行，在 DOMContentLoaded 前）' },
@@ -74,8 +76,8 @@
         { text: 'SameSite 三个值的区别？（Strict 仅同站；Lax 允许顶层 GET 导航；None+Secure 允许跨站）' },
         { text: 'HTTP 请求一定会带 Cookie 吗？（不一定：Domain/Path 不匹配、SameSite 限制、Secure 要求 HTTPS、跨域未开启 credentials 都不会带）' },
         { text: 'Cookie vs LocalStorage？（Cookie 4KB 自动发送有过期控制；LocalStorage 5MB 不自动发送需手动管理）' },
-        { text: '为什么设置了 <code>Access-Control-Allow-Origin: *</code> 带 Cookie 还是失败？（带凭证时 Allow-Origin 不能是 *，必须具体域名 + Allow-Credentials: true）' },
-        { text: '跨站带 Cookie 还需要什么？（Cookie 需设 <code>SameSite=None; Secure</code>，前端需 <code>credentials: "include"</code>）' }
+        { text: '为什么设置了 <code>Access-Control-Allow-Origin: *</code> 带 Cookie 还是失败？（带凭证时 Allow-Origin 不能是 *，必须具体域名如https://app.example.com + Allow-Credentials: true）:' },
+        { text: '跨站带 Cookie 完整需要什么？（1.Cookie 要设 SameSite=None; Secure 2.前端请求要 credentials: "include" 3.后端 CORS 要返回明确的 Access-Control-Allow-Origin 和 Access-Control-Allow-Credentials: true，非简单请求还要放行预检；4.另外浏览器第三方 Cookie 策略也不能拦。）' }
       ],
       bonus: `说出"第一次访问时服务器并不识别用户，只有登录成功后服务器通过 Set-Cookie 下发 sessionId，后续请求自动携带，服务器查 session 表识别用户"，体现你理解 Cookie 的完整工作流而不只是背属性。`
     },
