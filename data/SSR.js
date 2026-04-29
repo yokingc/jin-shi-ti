@@ -11,7 +11,7 @@
         { text: 'SSG', color: 'kw' },
         { text: 'Next.js', color: 'blue' }
       ],
-      opening: `CSR（客户端渲染）：服务器返回空 HTML + JS bundle，浏览器执行 JS 后渲染页面。首屏慢、SEO 差，但交互体验好，适合后台管理系统。SSR（服务端渲染）：服务器每次请求时执行 React/Vue，返回完整 HTML，首屏快、SEO 友好，但服务器压力大、TTFB 受接口影响。SSG（静态生成）：构建时预渲染成静态 HTML，CDN 直出，性能最好，适合内容不频繁变化的页面（文档、博客、落地页）。ISR（增量静态再生）是 SSG 的进化，允许按需或定时重新生成部分页面。`,
+      opening: `SSR、CSR、SSG，本质区别在于：HTML 是什么时候生成的，首屏内容主要由谁产出。<br/>CSR（客户端渲染）：服务器返回空 HTML + JS bundle，浏览器执行 JS 后渲染页面。首屏慢、SEO 差，但交互体验好，适合后台管理系统。SSR（服务端渲染）：服务器每次请求时执行 React/Vue，返回完整 HTML，首屏快、SEO 友好，但服务器压力大、TTFB 受接口影响。SSG（静态生成）：构建时预渲染成静态 HTML，CDN 直出，性能最好，适合内容不频繁变化的页面（文档、博客、落地页）。ISR（增量静态再生）是 SSG 的进化，允许按需或定时重新生成部分页面。`,
       followupLabel: '追问点',
       followup: [
         { text: 'SSR 的 TTFB 为什么可能比 CSR 慢？（服务端需要等待数据接口返回才能渲染 HTML，接口慢则 TTFB 慢；CSR 先返回空 HTML，数据请求在客户端并行）' },
